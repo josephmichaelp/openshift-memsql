@@ -20,3 +20,4 @@ fi
 echo "[${STAMP}] Starting daemon..."
 cd /memsql/memsql-ops/
 ./memsql-ops start --ignore-root-error -f 2>&1
+sleep 3600
