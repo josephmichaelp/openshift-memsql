@@ -19,3 +19,4 @@ cd /install
 sudo ./install.sh --ops-datadir /data --memsql-installs-dir /memsql
 chmod a+rw /memsql
 chmod a+rw /data
+exit 0
