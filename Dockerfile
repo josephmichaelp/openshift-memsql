@@ -27,9 +27,6 @@ RUN chmod 644 /etc/container_environment.sh
 # set UTC
 RUN ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
-# setup directories
-RUN mkdir /memsql
-
 # download and install MemSQL Ops
 # then reduce size by symlinking objdir and lib from one install to the other
 ADD setup_ops.sh /tmp/setup_ops.sh
@@ -62,7 +59,6 @@ ENTRYPOINT ["/scripts/run.sh"]
 # Set labels used in OpenShift to describe the builder images
 LABEL io.k8s.description="Debian linux based MemSQL" \
       io.k8s.display-name="alpine memsql" \
-      io.openshift.expose-services="9000:tcp,3306:tcp" \
       io.openshift.tags="builder,sql,memsql" \
       io.openshift.min-memory="1Gi" \
       io.openshift.min-cpu="1" \

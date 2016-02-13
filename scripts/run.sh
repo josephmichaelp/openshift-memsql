@@ -12,11 +12,6 @@ fi
 echo "[${STAMP}] Starting sshd on port 9022 ..."
 /usr/sbin/sshd -p 9022
 
-# ensure the volume is correct
-if [ ! -f /memsql/memsql-ops/memsql-ops ]; then
- cp -vfrp /install/* /memsql/
-fi
-
 echo "[${STAMP}] Starting daemon..."
 cd /memsql/memsql-ops/
 ./memsql-ops start --ignore-root-error -f 2>&1
