@@ -16,7 +16,7 @@ mkdir -p /data
 tar -xzf /tmp/memsql_ops.tar.gz -C /install --strip-components 1
 chmod -R a+rw /install
 cd /install
-sudo ./install.sh --ops-datadir /data --memsql-installs-dir /memsql
+sudo ./install.sh --ops-datadir /data --memsql-installs-dir /memsql --no-start -n
 chmod a+rw /memsql
 chmod a+rw /data
 exit 0
