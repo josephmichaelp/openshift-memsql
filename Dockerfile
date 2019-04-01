@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev
 
 # install useful python packages
+RUN pip install --upgrade pip
 RUN pip install memsql ipython psutil
 
 # configure locale
@@ -45,6 +46,7 @@ EXPOSE 3306
 EXPOSE 3307
 EXPOSE 9000
 EXPOSE 9022
+EXPOSE 8443
 
 # Clean up APT
 RUN apt-get clean &&  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
